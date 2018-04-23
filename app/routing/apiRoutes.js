@@ -5,9 +5,30 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
+//module.exports = 
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+var friends = [
+    {
+    name: "joe",
+    photo: "url..",
+    scores: [
+        4,
+        5,
+        2,
+        1,
+        4,
+        5,
+        1,
+        1,
+        2,
+        1,
+    ]
+    }
+];
 
 //* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
 app.get("/api/friends", function(req, res) {
@@ -20,11 +41,11 @@ app.get("/api/friends/:friend", function(req, res) {
 
   console.log(chosen);
 
-  for (var i = 0; i < friends.length; i++) {
-    if (chosen === friends[i].routeName) {
-      return res.json(friends[i]);
-    }
-  }
+  //for (var i = 0; i < friends.length; i++) {
+  //  if (chosen === friends[i].routeName) {
+  //    return res.json(friends[i]);
+  //  }
+ // }
   return res.json(false);
 });
 
@@ -41,4 +62,8 @@ app.post("/api/friends", function(req, res) {
   
     // We then display the JSON to the users
     res.json(newFriend);
+});
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
 });
