@@ -11,24 +11,6 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var friends = [
-    {
-    name: "joe",
-    photo: "url..",
-    scores: [
-        4,
-        5,
-        2,
-        1,
-        4,
-        5,
-        1,
-        1,
-        2,
-        1,
-    ]
-    }
-];
 
 //* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
 app.get("/api/friends", function(req, res) {

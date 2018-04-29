@@ -1,17 +1,25 @@
+//use to link css styling at the top of each sheet
+app.use(express.static(path.join(__dirname,'public')))
 
-//function Friend(name, photo, answer1, answer2, answer3, answer4, answer5, answer6) {
-  //this.name = name;
-  //this.photo = url;
-  //this.q1 = answer1;
-  //this.question2 = answer2;
-  //this.question3 = answer3;
-  //this.question4 = answer4;
-  //this.question5 = answer5;
-  //this.question6 = answer6;
-//}
+var friends = [
+  {
+  name: "joe",
+  photo: "url..",
+  scores: [
+      4,
+      5,
+      2,
+      1,
+      4,
+      5,
+      1,
+      1,
+      2,
+      1,
+  ]
+  }
+];
 
-//var person = new Friend("Keely", "url", 2, 1, 5, 4, 1, 3);
-//console.log(new Friend);
 
 var friend = {
       name: $("#name").val(),
@@ -29,6 +37,7 @@ var friend = {
         $("q10").val(),
       ]
     }
+
     //make an AJAX post to the friends API with user input values 
     $.post("/api/friends", userData, function(data){
 
