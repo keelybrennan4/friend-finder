@@ -1,7 +1,31 @@
 .jumbotron {
-    background-image: url("./images/xmas.jpg");
+    background-image: url("./images/cover.png");
     background-size: cover;
-    height: 100%;
     text-align: center;
-    opacity: 0.5;
+    opacity: 0.7;
+    color: black;
+}
+
+body {
+    background-image: url("./images/cover.jpg");
+    background-size:cover;
+    height: 900px;
+    font-family: "helvetica";
+}
+
+.container {
+    font-size: 20px;
+    margin-top:20px;
+}
+footer {
+    text-align: center;
+}
+
+.display-4 {
+    font-weight: bold;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+a {
+    color: white;
 }
