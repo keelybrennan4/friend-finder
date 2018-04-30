@@ -5,14 +5,14 @@ app.use(express.static(path.join(__dirname,'public')))
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-
-// express app
 var app = express();
+
+//express 
 require('/apiroutes.js')(app);
 
 var friendData = require(path.join(__dirname, 'data/friendData.js'));
 
-var PORT = 3000;
+var PORT = process.env.PORT || 8080;
 
 app.get('/', function(req, res){
     res.send('hi!');
