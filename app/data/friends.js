@@ -1,5 +1,5 @@
 //use to link css styling at the top of each sheet
-app.use(express.static(path.join(__dirname,'public')))
+//app.use(express.static(path.join(__dirname,'public')))
 
 var friends = [ 
   {
