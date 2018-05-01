@@ -3,13 +3,13 @@
 
 var friends = [ 
   {
-  "name": "Frank Gallagher",
-  "photo":"https://vignette.wikia.nocookie.net/shameless/images/a/af/Rr.jpg/revision/latest?cb=20160912192013",
-  "scores":[2,5,5,4,1,3,5,1,2,1]
+  name: "Frank Gallagher",
+  photo:"https://vignette.wikia.nocookie.net/shameless/images/a/af/Rr.jpg/revision/latest?cb=20160912192013",
+  scores:[2,5,5,4,1,3,5,1,2,1]
 },{
-   "name": "Fiona Gallagher",
-   "photo":"https://vignette.wikia.nocookie.net/shameless/images/c/c8/Tumblr_o1h2rvwJ9I1tuehrqo1_1280.jpg/revision/latest?cb=20160125193117",
-   "scores":[5,4,2,3,2,4,3,5,1,5]
+   name: "Fiona Gallagher",
+   photo:"https://vignette.wikia.nocookie.net/shameless/images/c/c8/Tumblr_o1h2rvwJ9I1tuehrqo1_1280.jpg/revision/latest?cb=20160125193117",
+   scores :[5,4,2,3,2,4,3,5,1,5]
 },{
    "name": "Lip Gallagher",
    "photo":"https://vignette.wikia.nocookie.net/shameless/images/f/f6/LIP-GALLAGHER-CHARACTER-PORTAL.png/revision/latest?cb=20170126213541",

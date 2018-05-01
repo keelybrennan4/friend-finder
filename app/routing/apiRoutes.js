@@ -1,4 +1,4 @@
-var friendData = require('../data/friends.js');
+var friendsData = require('../data/friends.js');
 
 module.exports = function (app){
 
@@ -11,18 +11,49 @@ module.exports = function (app){
   // This route will also be used to handle the compatibility logic.
   app.post('/api/friends', function(req, res) {
   
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body-parser middleware
-    var newFriend = req.body;
-  
-    console.log(newFriend);
-  
-    // We then add the json the user sent to the character array
-    friends.push(newFriend);
-  
-    // We then display the JSON to the users
-    res.json(newFriend);
-});
+    var bestMatch = {
+      name: "",
+      photo: "",
+      friendDiff: 100
+    };
+    console.log(req.body);
+
+    var userData = req.body;
+    var userScores = userData.scores;
+
+    //variable to calculate the difference between the user's score and the score of each friend already in friends data
+    var totalDiff = 0;
+
+    //loop through all friend possibilities in the database 
+    for (i = 0; i < friendsData.length; i++) {
+      totalDiff = 0;
+      console.log(totalDiff);
+
+      for (j = 0; j <friendsData[i].scores[j]; j++){
+
+        //sum difference between scores
+        totalDiff += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
+
+        //compare scores for each friend
+        if (totalDiff <= best.Match.friendDiff){
+
+          //make a new match
+          bestMatch.name = friendsData[i].name;
+          bestMatch.name = friendsData[i].photo;
+          bestMatch.friendDiff = totalDiff;
+        }
+      }
+    }
+
+    console.log(userData);
+
+    //add a new user 
+    friendsData.push(userData);
+    
+    //return a JSON with the user's best match to modal in HTML
+    res.json(bestMatch);
+
+  });
 
 
 }
