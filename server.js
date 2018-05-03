@@ -1,6 +1,4 @@
-//use to link css styling at the top of each sheet
-//app.use(express.static(path.join(__dirname,'public')))
-
+//dependencies
 var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
@@ -8,10 +6,11 @@ var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-//body parser application to receive data back in json 
-app.use(bodyParser.urlencoded({ extended: true }));
+//sets up express app to handle data parsing 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //require api routes in server file
 require('./app/routing/apiRoutes.js')(app);
