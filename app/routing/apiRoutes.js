@@ -35,7 +35,7 @@ module.exports = function (app){
         //sum difference between scores
         totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
           //compare scores for each friend
-          if (totalDiff <= bestMatch.friendDifference){
+          if (totalDifference <= bestMatch.friendDifference){
 
             //make a new match
             bestMatch.name = friendsData[i].name;
