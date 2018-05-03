@@ -1,5 +1,5 @@
 //require data from freinds.js/incoming survey results
-var friendsData = require(path.join(__dirname, '../app/friends.js'));
+var friendsData = require('../data/friends.js');
 
 module.exports = function (app){
 
