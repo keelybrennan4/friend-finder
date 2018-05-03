@@ -1,5 +1,5 @@
 //require data from freinds.js/incoming survey results
-var friendsData = require('../data/friends.js');
+var friendsData = require(path.join(__dirname, '../app/friends.js'));
 
 module.exports = function (app){
 
@@ -14,7 +14,7 @@ module.exports = function (app){
     var bestMatch = {
       name: "",
       photo: "",
-      friendDiff: 100
+      friendDifference: 1000
     };
     console.log(req.body);
 
@@ -22,28 +22,27 @@ module.exports = function (app){
     var userScores = userData.scores;
 
     //variable to calculate the difference between the user's score and the score of each friend already in friends data
-    var totalDiff = 0;
+    var totalDifference = 0;
 
     //loop through all friend possibilities in the database 
     for (var i = 0; i < friendsData.length; i++) {
-      totalDiff = 0;
-      console.log(totalDiff);
-      
+      console.log(friendsData[i]);
+      totalDifference = 0;
+
       //loop through scores to compare friends
-      for (var j = 0; j <= friendsData[i].scores[j]; j++){
+      for (var j = 0; j < friendsData[i].scores[j]; j++){
 
         //sum difference between scores
-        totalDiff += (Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j])));
+        totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
+          //compare scores for each friend
+          if (totalDiff <= bestMatch.friendDifference){
 
-        //compare scores for each friend
-        if (totalDiff <= bestMatch.friendDiff){
-
-          //make a new match
-          bestMatch.name = friendsData[i].name;
-          bestMatch.name = friendsData[i].photo;
-          bestMatch.friendDiff = totalDiff;
+            //make a new match
+            bestMatch.name = friendsData[i].name;
+            bestMatch.photo = friendsData[i].photo;
+            bestMatch.friendDifference = totalDifference;
+          }
         }
-      }
     }
 
     console.log(userData);
