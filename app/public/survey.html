@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href= "/style.css">
+    <link rel="stylesheet" type="style/css" href= "/style.css">
 
 </head>
 
@@ -33,7 +33,7 @@
         <h4>Please answer each question with a number between 1 (strongly disagree) and 5 (strongly agree).</h4>
         <br>
         <div class="form-group">
-            <label for="question1">1. Question 1..... </label>
+            <label for="question1">Question 1..... </label>
             <select class="form-control col-md-2" id="q1" name="scores[0]">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -45,7 +45,7 @@
         <br>
 
         <div class="form-group">
-                <label for="question2">1. Question 2..... </label>
+                <label for="question2">Question 2..... </label>
                 <select class="form-control col-md-2" id="q2" name="scores[1]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -57,7 +57,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question3">1. Question 3..... </label>
+                <label for="question3">Question 3..... </label>
                 <select class="form-control col-md-2" id="q3" name="scores[2]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -69,7 +69,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question4">1. Question 4..... </label>
+                <label for="question4">Question 4..... </label>
                 <select class="form-control col-md-2" id="q4" name="scores[3]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -81,7 +81,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question5">1. Question 5..... </label>
+                <label for="question5">Question 5..... </label>
                 <select class="form-control col-md-2" id="q5" name="scores[4]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -92,7 +92,7 @@
             </div>
             <br>
         <div class="form-group">
-            <label for="question1">1. Question 6..... </label>
+            <label for="question1">Question 6..... </label>
             <select class="form-control col-md-2" id="q6" name="scores[5]">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -104,7 +104,7 @@
         <br>
 
         <div class="form-group">
-                <label for="question2">1. Question 7..... </label>
+                <label for="question2">Question 7..... </label>
                 <select class="form-control col-md-2" id="q7" name="scores[6]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -116,7 +116,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question3">1. Question 8..... </label>
+                <label for="question3">Question 8..... </label>
                 <select class="form-control col-md-2" id="q8" name="scores[7]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -128,7 +128,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question4">1. Question 9..... </label>
+                <label for="question4">Question 9..... </label>
                 <select class="form-control col-md-2" id="q9" name="scores[8]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -140,7 +140,7 @@
             <br>
 
         <div class="form-group">
-                <label for="question5">1. Question 10..... </label>
+                <label for="question5">Question 10..... </label>
                 <select class="form-control col-md-2" id="q10" name="scores[9]">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -149,8 +149,10 @@
                     <option value="5">5</option>
                 </select>
             </div>
-            <br>
-
+        <br>
+        <button type="button" id="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modal"><i class="fa fa-check-square" aria-hidden="true"></i> Submit</button>
+        <br>
+    </div>
     
 <!--FOOTER SECTION -->
 <footer class="footer">
@@ -162,11 +164,54 @@
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<!-- MODAL -->
+    <div class="modal" id="friendModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your New BFF!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="matchName"></p>
+                    <img id="matchPic" src="" alt="Image Unavailable" width="300px">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Javascript -->
-<script "text/javascript" src="../../server.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    $("#submit").on("click", function () {
+        
+        // URL is localhost:PORT because the url will change once deployed.
+        var currentURL = window.location.origin;
+        
+        event.preventDefault();
+        $("#userModal").modal("show");
+           
+        var userInput = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            scores: [$('#q1').val().trim(), $('#q2').val().trim(), $('#q3').val().trim(), $('#q4').val().trim(), $('#q5').val().trim(), $('#q6').val().trim(), $('#q7').val().trim(), $('#q8').val().trim(), $('#q9').val().trim(), $('#q10').val().trim()]
+            }
+
+            $.post(currentURL + "/api/friends", userInput, function (data) {
+                $("#matchName").text(data.name);
+                $("#matchPic").attr("src", data.photo);
+                console.log($("#matchPic").attr("src", data.photo));
+            })
+        });
+
+    </script>
 
 </body>
 </html>
