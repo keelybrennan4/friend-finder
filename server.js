@@ -19,7 +19,8 @@ require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
 //allows html to have access to our public folder on the server
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + 'public'));
+app.use(express.static(path.join(__dirname, './app/public')));
 
 app.listen(PORT, function(){
     console.log("App listening on PORT" + PORT);
