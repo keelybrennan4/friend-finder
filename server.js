@@ -6,6 +6,9 @@ var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+//allows html to have access to our public folder on the server
+app.use(express.static('public'))
+
 //sets up express app to handle data parsing 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,8 +20,6 @@ require('./app/routing/apiRoutes.js')(app);
 //require html routes in server file and will pass app in using express 
 require('./app/routing/htmlRoutes.js')(app);
 
-//allows html to have access to our public folder on the server
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, function(){
     console.log("App listening on PORT" + PORT);
